@@ -33,3 +33,6 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+.eslintrc.cjs
+app.json
+tsconfig.json
