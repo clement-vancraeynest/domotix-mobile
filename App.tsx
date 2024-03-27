@@ -7,7 +7,7 @@ import HomeScreen from "./screens/HomeScreen";
 import RoomsScreen from "./screens/RoomsScreen";
 import ObjectsScreen from "./screens/ObjectsScreen";
 import SettingsScreen from "./screens/SettingsScreen";
-import { cssStandard } from "./theme";
+import { styleTheme } from "./style/styleTheme";
 import Octicons from "@expo/vector-icons/Octicons";
 
 const Tab = createBottomTabNavigator();
@@ -18,7 +18,7 @@ export default function App() {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
-            let iconName: any;
+            let iconName: "home" | "package" | "apps" | "gear";
             switch (route.name) {
               case "HOME":
                 iconName = "home";
@@ -35,7 +35,7 @@ export default function App() {
             }
             return <Octicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: cssStandard.bgBlueColor,
+          tabBarActiveTintColor: styleTheme.bgBlueColor,
           tabBarInactiveTintColor: "black",
         })}
       >
